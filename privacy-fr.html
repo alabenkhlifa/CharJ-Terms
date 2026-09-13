@@ -58,13 +58,13 @@ text-align:center}
     </div>
     <article class="card">
       <h1>Politique de confidentialité de Charj</h1>
-<p><strong>Dernière mise à jour : 16 avril 2026</strong></p>
+<p><strong>Dernière mise à jour : 14 septembre 2026</strong></p>
 <p>Charj est une application mobile gratuite, sans publicité, qui aide les propriétaires de véhicules électriques en Tunisie à trouver des bornes de recharge. Cette politique explique quelles données nous collectons et comment nous les utilisons.</p>
 <h2>Résumé</h2>
 <ul>
 <li>Nous collectons le <strong>minimum de données nécessaires</strong> pour faire fonctionner l'application.</li>
 <li>Nous <strong>ne vendons jamais</strong> vos données.</li>
-<li>Nous <strong>n'utilisons aucun réseau publicitaire</strong> ni traceur tiers.</li>
+<li>Nous <strong>n'utilisons aucun réseau publicitaire</strong> ni traceur publicitaire.</li>
 <li>Nous <strong>n'exigeons aucun compte</strong> pour utiliser Charj.</li>
 </ul>
 <h2>Ce que nous collectons</h2>
@@ -73,27 +73,31 @@ text-align:center}
 - Centrer la carte sur votre position
 - Calculer les distances jusqu'aux bornes proches
 - Trier les listes de bornes par distance</p>
-<p>Votre position n'est <strong>jamais transmise à nos serveurs</strong> et reste utilisée uniquement sur votre appareil.</p>
+<p>Le centrage de la carte et le calcul des distances se font sur votre appareil. Lorsque vous calculez un itinéraire, les points de départ et d’arrivée sont transmis à notre service de calcul d’itinéraires hébergé par Supabase et à Google Maps. Si vous lancez la navigation, les destinations choisies sont transmises à l’application de cartes que vous ouvrez.</p>
 <h3>Contributions communautaires</h3>
 <p>Si vous soumettez une borne ou signalez un problème, nous stockons sur nos serveurs :
 - Un identifiant d'appareil anonyme généré aléatoirement (utilisé uniquement pour afficher le compteur de vos contributions)
 - Le nom, la position, le type de connecteur, la puissance, les notes et les photos que vous fournissez
 - L'horodatage de votre contribution</p>
 <p>Vous pouvez effacer votre identifiant d'appareil à tout moment en réinstallant l'application.</p>
+<h3>Avis et confirmations de recharge</h3>
+<p>Lorsque vous envoyez un avis ou une confirmation de recharge, nous conservons un identifiant de session anonyme pour protéger vos contributions et limiter les doublons. Cet identifiant n’est pas publié avec votre contribution. Les anciens avis restent visibles, mais ne peuvent pas être attribués à une nouvelle session à partir de leur identifiant public.</p>
+<p>Les confirmations publiques contiennent la station, le résultat, la date de visite choisie, éventuellement la raison et le connecteur, ainsi que la date d’envoi. Elles ne contiennent pas votre position GPS. Les avis publics contiennent votre note et votre commentaire. Les contributions peuvent être masquées pour modération.</p>
+<p>Les brouillons et rappels après navigation restent sur votre appareil. Aucun retour n’est envoyé automatiquement. Les rappels expirent après 24 heures et les brouillons après 48 heures ; ils sont aussi supprimés après envoi, abandon ou changement d’identité. Désinstaller l’application ne supprime pas les contributions déjà envoyées au serveur.</p>
 <h3>Données techniques</h3>
-<p>Charj peut mettre en cache localement des données de bornes sur votre appareil pour un usage hors-ligne. Ce cache est stocké uniquement sur votre appareil.</p>
+<p>Charj peut mettre en cache localement des données de bornes sur votre appareil pour un usage hors-ligne. Ce cache est stocké uniquement sur votre appareil. Les versions où Sentry est activé envoient des diagnostics d’erreurs, de performances et de stabilité des sessions pour corriger les problèmes. Aucun nouvel outil d’analyse comportementale n’est ajouté par les confirmations de recharge.</p>
 <h2>Ce que nous ne collectons PAS</h2>
 <ul>
-<li>Noms, adresses e-mail, numéros de téléphone</li>
+<li>Noms, adresses e-mail ou numéros de téléphone requis pour utiliser l’application. Vous pouvez fournir volontairement une adresse e-mail avec un message de retour.</li>
 <li>Identifiants ou mots de passe</li>
 <li>Historique de navigation ou analyses comportementales</li>
 <li>Contacts, photos (sauf celles que vous soumettez volontairement) ou autres fichiers personnels de votre appareil</li>
-<li>Journaux de plantage ou télémétrie (au moment de la rédaction)</li>
 </ul>
 <h2>Services tiers</h2>
 <p>Charj s'appuie sur :
 - <strong>Google Maps</strong> pour les tuiles de carte et la navigation. La politique de confidentialité de Google s'applique : https://policies.google.com/privacy
 - <strong>Supabase</strong> pour l'hébergement de la base de données. Politique de confidentialité Supabase : https://supabase.com/privacy
+- <strong>Sentry</strong>, lorsqu’il est activé, pour les diagnostics de fiabilité. Politique de confidentialité : https://sentry.io/privacy/
 - <strong>Open Charge Map</strong> pour les données de base des bornes. Aucune donnée utilisateur n'est envoyée à Open Charge Map.</p>
 <h2>Vos droits</h2>
 <p>À tout moment, vous pouvez :
