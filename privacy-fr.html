@@ -91,12 +91,15 @@ text-align:center}
 <p>Le partage est facultatif et nécessite de vérifier la destination et les arrêts au préalable. Nous conservons cet aperçu public, un jeton de lien aléatoire, un identifiant anonyme du propriétaire et les dates de création et d’expiration. Toute personne disposant du lien peut lire le titre, le nom et les coordonnées de la destination, ainsi que les arrêts. Le point de départ, la batterie et le véhicule ne sont pas inclus.</p>
 <p>Les liens expirent après 30 jours et peuvent être révoqués dans Trajets enregistrés. Supprimer un trajet local ne révoque pas ses liens. La révocation bloque les nouvelles consultations, sans supprimer les copies ou trajets déjà enregistrés par les destinataires. La perte de votre session anonyme peut empêcher la gestion des liens existants. Les enregistrements expirés ou révoqués peuvent être conservés pour gérer la propriété et les nouvelles tentatives, mais ne sont plus lisibles publiquement. La page publique n’utilise aucun suivi publicitaire ; GitHub Pages héberge la page et Supabase fournit l’itinéraire partagé.</p>
 <h3>Données techniques</h3>
-<p>Charj peut mettre en cache localement des données de bornes sur votre appareil pour un usage hors-ligne. Ce cache est stocké uniquement sur votre appareil. Les versions où Sentry est activé envoient des diagnostics d’erreurs, de performances et de stabilité des sessions pour corriger les problèmes. Aucun nouvel outil d’analyse comportementale n’est ajouté par les confirmations de recharge.</p>
+<p>Charj peut mettre en cache localement des données de bornes sur votre appareil pour un usage hors-ligne. Ce cache est stocké uniquement sur votre appareil. Les versions où Sentry est activé envoient des diagnostics d’erreurs, de performances et de stabilité des sessions pour corriger les problèmes.</p>
+<h3>Statistiques d’utilisation</h3>
+<p>Les statistiques d’utilisation sont activées par défaut. Vous pouvez les désactiver dans Paramètres → Statistiques d’utilisation. Elles mesurent les ouvertures de l’application, les consultations de bornes, le nombre de résultats et le filtre d’une recherche, les demandes d’itinéraire et leur résultat, ainsi que les lancements d’une application de navigation. Elles comprennent un identifiant de session utilisateur pseudonyme, un identifiant de visite, la date, la version de l’application, la plateforme et la langue.</p>
+<p>Les événements sont hébergés chez Supabase et conservés pendant 90 jours avec une purge quotidienne. Le tableau de bord administrateur affiche des statistiques agrégées. Ces événements ne contiennent ni position GPS, ni coordonnées de trajet, ni texte de recherche, ni nom ou adresse e-mail. Désactiver les statistiques arrête la nouvelle collecte et efface les événements en attente sur l’appareil ; les événements déjà transmis suivent la durée de conservation. Cette option ne désactive pas les diagnostics de fiabilité de Sentry. Réinstaller l’application peut créer un nouvel identifiant et rétablir les paramètres par défaut.</p>
 <h2>Ce que nous ne collectons PAS</h2>
 <ul>
 <li>Noms, adresses e-mail ou numéros de téléphone requis pour utiliser l’application. Vous pouvez fournir volontairement une adresse e-mail avec un message de retour.</li>
 <li>Identifiants ou mots de passe</li>
-<li>Historique de navigation ou analyses comportementales</li>
+<li>Historique de navigation en dehors de Charj ou identifiants publicitaires</li>
 <li>Contacts, photos (sauf celles que vous soumettez volontairement) ou autres fichiers personnels de votre appareil</li>
 </ul>
 <h2>Services tiers</h2>
@@ -107,6 +110,7 @@ text-align:center}
 - <strong>Open Charge Map</strong> pour les données de base des bornes. Aucune donnée utilisateur n'est envoyée à Open Charge Map.</p>
 <h2>Vos droits</h2>
 <p>À tout moment, vous pouvez :
+- Désactiver les statistiques d’utilisation dans les paramètres de Charj
 - Révoquer les autorisations de localisation dans les paramètres de votre appareil
 - Supprimer toutes les données locales de l'application en désinstallant Charj
 - Demander la suppression d'une contribution que vous avez faite en ouvrant un ticket GitHub : https://github.com/alabenkhlifa/CharJ/issues</p>

@@ -91,12 +91,15 @@ text-align:center}
 <p>Sharing is optional and requires reviewing the destination and charging stops first. We store that public snapshot, a random link token, an anonymous owner identifier and creation and expiry dates. Anyone with the link can read its title, destination coordinates and name, and charging stops. Your starting point, battery setting and vehicle are not included.</p>
 <p>Links expire after 30 days and can be revoked in Saved plans. Deleting a local plan does not revoke its links. Revocation prevents new retrievals; it cannot remove copies or routes already saved by recipients. Losing your anonymous session can prevent you from managing existing links. Expired or revoked records may remain for ownership and retry handling but are no longer publicly readable. The public page uses no advertising trackers; GitHub Pages hosts the page and Supabase serves the shared itinerary.</p>
 <h3>Technical data</h3>
-<p>Charj may cache charger data locally on your device for offline use. This cache is stored only on your device. Builds with Sentry enabled send error, performance, and session-stability diagnostics to help fix problems. Charging confirmations do not add behavioral analytics.</p>
+<p>Charj may cache charger data locally on your device for offline use. This cache is stored only on your device. Builds with Sentry enabled send error, performance, and session-stability diagnostics to help fix problems.</p>
+<h3>Usage analytics</h3>
+<p>Usage analytics is enabled by default. You can turn it off in Settings → Usage analytics. It measures app opens, charger views, search result counts and selected filters, itinerary requests and their outcomes, and launches of a navigation app. Events include a pseudonymous user-session identifier, a visit identifier, timestamp, app version, platform and language.</p>
+<p>Events are hosted by Supabase and retained for 90 days, with daily deletion of older records. The admin dashboard displays aggregate statistics. These events exclude GPS positions, route coordinates, search text, names and email addresses. Opting out stops new collection and clears pending events on your device; previously delivered events follow the retention period. This setting does not disable Sentry reliability diagnostics. Reinstalling the app can create a new identifier and restore default settings.</p>
 <h2>What we do NOT collect</h2>
 <ul>
 <li>Names, email addresses, or phone numbers required to use the app. You may voluntarily provide an email address with a feedback message.</li>
 <li>Account credentials or passwords</li>
-<li>Browsing history or behavioral analytics</li>
+<li>Browsing history outside Charj or advertising identifiers</li>
 <li>Device contacts, photos (except those you voluntarily submit), or other personal files</li>
 </ul>
 <h2>Third-party services</h2>
@@ -107,6 +110,7 @@ text-align:center}
 - <strong>Open Charge Map</strong> for base charger data. No user data is sent to Open Charge Map.</p>
 <h2>Your rights</h2>
 <p>You may at any time:
+- Turn off usage analytics in Charj settings
 - Revoke location permissions via your device settings
 - Delete all local app data by uninstalling Charj
 - Request deletion of a submission you made by opening a GitHub issue: https://github.com/alabenkhlifa/CharJ/issues</p>
