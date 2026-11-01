@@ -87,6 +87,11 @@ text-align:center}
 <h3>Bornes suivies et trajets enregistrés</h3>
 <p>Suivre une borne enregistre votre identifiant de session anonyme, la borne, la date du suivi et les mises à jour marquées comme lues. Ces choix sont privés. La liste affiche les changements survenus après le début du suivi pendant 30 jours au maximum. Arrêter le suivi supprime ce suivi et ses accusés de lecture. Un cache facultatif reste sur votre appareil et est effacé lorsque la session change.</p>
 <p>Les trajets enregistrés restent sur votre appareil : point de départ, destination, niveau de batterie, référence du véhicule choisi et arrêts préférés. Vous pouvez les supprimer dans Trajets enregistrés.</p>
+<h3>Alertes bornes et notifications</h3>
+<p>Les alertes bornes sont facultatives (Paramètres → Alertes bornes). Les régions (gouvernorats) que vous choisissez sont enregistrées avec votre identifiant de session anonyme. Les nouvelles bornes et les annonces importantes dans ces régions apparaissent alors dans Actualités des stations, même sans notifications.</p>
+<p>Si vous activez « Me notifier », nous enregistrons le jeton de notification de votre appareil (fourni par Expo), la plateforme (Android ou iOS), la langue de l’application et sa version, afin d’envoyer les alertes dans votre langue. Les notifications passent par le service Expo Push, puis par Firebase Cloud Messaging (Android) ou Apple Push Notification service (iOS). Elles ne sont jamais envoyées entre 22 h et 8 h (heure de Tunis).</p>
+<p>Pour vous suggérer votre région, Charj compare votre position aux limites des gouvernorats directement sur votre téléphone, et seulement si vous avez déjà autorisé la localisation ou si vous touchez « Ajouter la région où vous êtes ». Votre position n’est jamais envoyée pour cela : seule la région que vous choisissez est enregistrée.</p>
+<p>Les éléments de la boîte de réception et les journaux d’envoi sont supprimés après 90 jours. Retirer une région supprime les éléments qu’elle vous avait apportés. Pour arrêter les notifications, désactivez « Me notifier » ou les notifications de Charj dans les réglages du téléphone ; décochez toutes les régions pour ne plus recevoir d’alertes. Les appareils inactifs sont retirés automatiquement.</p>
 <h3>Liens d’itinéraires partagés</h3>
 <p>Le partage est facultatif et nécessite de vérifier la destination et les arrêts au préalable. Nous conservons cet aperçu public, un jeton de lien aléatoire, un identifiant anonyme du propriétaire et les dates de création et d’expiration. Toute personne disposant du lien peut lire le titre, le nom et les coordonnées de la destination, ainsi que les arrêts. Le point de départ, la batterie et le véhicule ne sont pas inclus.</p>
 <p>Les liens expirent après 30 jours et peuvent être révoqués dans Trajets enregistrés. Supprimer un trajet local ne révoque pas ses liens. La révocation bloque les nouvelles consultations, sans supprimer les copies ou trajets déjà enregistrés par les destinataires. La perte de votre session anonyme peut empêcher la gestion des liens existants. Les enregistrements expirés ou révoqués peuvent être conservés pour gérer la propriété et les nouvelles tentatives, mais ne sont plus lisibles publiquement. La page publique n’utilise aucun suivi publicitaire ; GitHub Pages héberge la page et Supabase fournit l’itinéraire partagé.</p>
@@ -107,7 +112,7 @@ text-align:center}
 <li>Les changements de langue et de thème</li>
 <li>Pour les alertes bornes : la réponse à la demande d’autorisation des notifications, le nombre de régions choisies, la réponse à la carte d’invitation et l’ouverture d’une notification</li>
 </ul>
-<p>Elles comprennent un identifiant de session utilisateur pseudonyme, un identifiant de visite, la date, la version de l’application, la plateforme, la langue et le design utilisé (nouveau ou classique).</p>
+<p>Elles comprennent un identifiant de session utilisateur pseudonyme, un identifiant de visite, la date, la version de l’application, la plateforme, la langue, le design utilisé (nouveau ou classique), ainsi que le modèle de l’appareil, la version du système et la taille de l’écran. Elles ne comprennent jamais le nom de l’appareil ni ses identifiants matériels.</p>
 <p>Les événements sont hébergés chez Supabase et conservés pendant 90 jours avec une purge quotidienne. Des totaux quotidiens agrégés, sans aucun identifiant, sont conservés plus longtemps. Le tableau de bord administrateur affiche des statistiques agrégées. Ces événements ne contiennent ni position GPS, ni coordonnées de trajet, ni nom ou adresse e-mail. Ils ne contiennent pas non plus le texte des recherches, sauf pour une recherche de voiture sans résultat : ce texte est d’abord nettoyé sur votre appareil (lettres latines, chiffres et ponctuation simple, 40 caractères au maximum) et n’est pas envoyé s’il contient une adresse e-mail ou plus de cinq chiffres. Désactiver les statistiques arrête la nouvelle collecte et efface les événements en attente sur l’appareil ; les événements déjà transmis suivent la durée de conservation. Cette option ne désactive pas les diagnostics de fiabilité de Sentry. Réinstaller l’application peut créer un nouvel identifiant et rétablir les paramètres par défaut.</p>
 <h2>Ce que nous ne collectons PAS</h2>
 <ul>
@@ -120,12 +125,14 @@ text-align:center}
 <p>Charj s'appuie sur :
 - <strong>Google Maps</strong> pour les tuiles de carte et la navigation. La politique de confidentialité de Google s'applique : https://policies.google.com/privacy
 - <strong>Supabase</strong> pour l'hébergement de la base de données. Politique de confidentialité Supabase : https://supabase.com/privacy
+- <strong>Expo</strong> (Expo Push), avec <strong>Firebase Cloud Messaging</strong> (Google) sur Android et <strong>Apple Push Notification service</strong> sur iOS, pour livrer les alertes bornes si vous les activez. Politique de confidentialité Expo : https://expo.dev/privacy
 - <strong>Sentry</strong>, lorsqu’il est activé, pour les diagnostics de fiabilité. Politique de confidentialité : https://sentry.io/privacy/
 - <strong>Open Charge Map</strong> pour les données de base des bornes. Aucune donnée utilisateur n'est envoyée à Open Charge Map.</p>
 <h2>Vos droits</h2>
 <p>À tout moment, vous pouvez :
 - Désactiver les statistiques d’utilisation dans les paramètres de Charj
 - Révoquer les autorisations de localisation dans les paramètres de votre appareil
+- Désactiver les alertes bornes ou retirer vos régions dans Paramètres → Alertes bornes, ou bloquer les notifications de Charj dans les paramètres de votre appareil
 - Supprimer toutes les données locales de l'application en désinstallant Charj
 - Demander la suppression d'une contribution que vous avez faite en ouvrant un ticket GitHub : https://github.com/alabenkhlifa/CharJ/issues</p>
 <h2>Enfants</h2>

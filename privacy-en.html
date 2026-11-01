@@ -87,6 +87,11 @@ text-align:center}
 <h3>Followed stations and saved plans</h3>
 <p>Following a station stores your anonymous session identifier, the station and follow date, and which updates you marked as read. These choices are private. The inbox shows changes after you follow a station for up to 30 days. Unfollowing removes the follow and its read receipts. An optional cache stays on your device and is cleared when the session changes.</p>
 <p>Saved plans stay on your device, including their starting point, destination, battery setting, selected vehicle reference and preferred stops. You can delete them in Saved plans.</p>
+<h3>Charger alerts and notifications</h3>
+<p>Charger alerts are optional (Settings → Charger alerts). The regions (governorates) you pick are stored with your anonymous session identifier. New chargers and important announcements in those regions then appear in Station updates, even without notifications.</p>
+<p>If you turn on "Notify me", we store your device's notification token (issued by Expo), the platform (Android or iOS), the app language and the app version, so alerts arrive in your language. Notifications go through the Expo Push service, then Firebase Cloud Messaging (Android) or Apple Push Notification service (iOS). They are never sent between 22:00 and 08:00 Tunis time.</p>
+<p>To suggest your region, Charj matches your position against governorate boundaries on your phone, and only if you already allowed location access or tap "Add the region where you are". Your position is never sent for this: only the region you pick is stored.</p>
+<p>Inbox items and delivery logs are deleted after 90 days. Removing a region deletes the items it brought you. To stop notifications, turn off "Notify me" or Charj notifications in your phone settings; untick every region to stop alerts entirely. Inactive devices are removed automatically.</p>
 <h3>Shared itinerary links</h3>
 <p>Sharing is optional and requires reviewing the destination and charging stops first. We store that public snapshot, a random link token, an anonymous owner identifier and creation and expiry dates. Anyone with the link can read its title, destination coordinates and name, and charging stops. Your starting point, battery setting and vehicle are not included.</p>
 <p>Links expire after 30 days and can be revoked in Saved plans. Deleting a local plan does not revoke its links. Revocation prevents new retrievals; it cannot remove copies or routes already saved by recipients. Losing your anonymous session can prevent you from managing existing links. Expired or revoked records may remain for ownership and retry handling but are no longer publicly readable. The public page uses no advertising trackers; GitHub Pages hosts the page and Supabase serves the shared itinerary.</p>
@@ -107,7 +112,7 @@ text-align:center}
 <li>Language and theme changes</li>
 <li>For charger alerts: the answer to the notification permission request, the number of regions picked, the answer to the invitation card and notification opens</li>
 </ul>
-<p>Events include a pseudonymous user-session identifier, a visit identifier, timestamp, app version, platform, language and the app design in use (new or classic).</p>
+<p>Events include a pseudonymous user-session identifier, a visit identifier, timestamp, app version, platform, language, the app design in use (new or classic), and the device model, operating system version and screen size. They never include the device name or hardware identifiers.</p>
 <p>Events are hosted by Supabase and retained for 90 days, with daily deletion of older records. Aggregated daily counts, with no identifier, are kept longer. The admin dashboard displays aggregate statistics. These events exclude GPS positions, route coordinates, names and email addresses. They also exclude search text, except for car searches that found no car: that text is first cleaned on your device (Latin letters, digits and basic punctuation, 40 characters at most) and is not sent if it contains an email address or more than five digits. Opting out stops new collection and clears pending events on your device; previously delivered events follow the retention period. This setting does not disable Sentry reliability diagnostics. Reinstalling the app can create a new identifier and restore default settings.</p>
 <h2>What we do NOT collect</h2>
 <ul>
@@ -120,12 +125,14 @@ text-align:center}
 <p>Charj relies on:
 - <strong>Google Maps</strong> for map tiles and navigation. Google's privacy policy applies: https://policies.google.com/privacy
 - <strong>Supabase</strong> for database hosting. Supabase's privacy policy: https://supabase.com/privacy
+- <strong>Expo</strong> (Expo Push), with <strong>Firebase Cloud Messaging</strong> (Google) on Android and <strong>Apple Push Notification service</strong> on iOS, to deliver charger alerts if you turn them on. Expo's privacy policy: https://expo.dev/privacy
 - <strong>Sentry</strong>, when enabled, for reliability diagnostics. Privacy policy: https://sentry.io/privacy/
 - <strong>Open Charge Map</strong> for base charger data. No user data is sent to Open Charge Map.</p>
 <h2>Your rights</h2>
 <p>You may at any time:
 - Turn off usage analytics in Charj settings
 - Revoke location permissions via your device settings
+- Turn off charger alerts or remove your regions in Settings → Charger alerts, or block Charj notifications in your device settings
 - Delete all local app data by uninstalling Charj
 - Request deletion of a submission you made by opening a GitHub issue: https://github.com/alabenkhlifa/CharJ/issues</p>
 <h2>Children</h2>
