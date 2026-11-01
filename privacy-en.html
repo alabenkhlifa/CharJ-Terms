@@ -69,16 +69,20 @@ text-align:center}
 </ul>
 <h2>What we collect</h2>
 <h3>Location data</h3>
-<p>When you grant permission, Charj uses your device's location to:
-- Center the map on your position
-- Calculate distances to nearby chargers
-- Sort charger lists by distance</p>
+<p>When you grant permission, Charj uses your device's location to:</p>
+<ul>
+<li>Center the map on your position</li>
+<li>Calculate distances to nearby chargers</li>
+<li>Sort charger lists by distance</li>
+</ul>
 <p>Map centering and distance calculations happen on your device. When you calculate a driving route, the origin and destination are sent to our route service hosted by Supabase and to Google Maps. When you start navigation, the selected destinations are passed to the maps app you open.</p>
 <h3>Community submissions</h3>
-<p>If you submit a charger or report a problem, we store the following on our servers:
-- A randomly generated, anonymous device identifier (used only to show you your own submissions count)
-- The charger name, location, connector type, power, notes, and photos you provide
-- The timestamp of your submission</p>
+<p>If you submit a charger or report a problem, we store the following on our servers:</p>
+<ul>
+<li>A randomly generated, anonymous device identifier (used only to show you your own submissions count)</li>
+<li>The charger name, location, connector type, power, notes, and photos you provide</li>
+<li>The timestamp of your submission</li>
+</ul>
 <p>You can clear your device identifier at any time by reinstalling the app.</p>
 <h3>Reviews and charging confirmations</h3>
 <p>When you send a review or charging confirmation, we store an anonymous session identifier to protect your contributions and limit duplicates. This identifier is not published with your contribution. Older reviews remain visible but cannot be assigned to a new session using their public identifier.</p>
@@ -103,7 +107,7 @@ text-align:center}
 <li>App opens and the screens you view (screen name only)</li>
 <li>The onboarding result: car added or skipped</li>
 <li>The answer to a location permission request and where in the app it was asked, only when the system dialog appeared</li>
-<li>Charger views, search result counts and selected filters, map filter and list sort changes, and stations added to or removed from favorites</li>
+<li>Charger views and where in the app the charger was opened from (map, list, favorites, an itinerary, station updates, a notification), search result counts and selected filters, map filter and list sort changes, and stations added to or removed from favorites</li>
 <li>Itinerary requests and their outcomes, with the governorate (never the position) of the starting point and destination, and itinerary saves and shares</li>
 <li>Launches of a navigation app</li>
 <li>Cars added (and from where in the app) and, for car searches, the number of results and the length of the search text</li>
@@ -113,7 +117,7 @@ text-align:center}
 <li>For charger alerts: the answer to the notification permission request, the number of regions picked, the answer to the invitation card and notification opens</li>
 </ul>
 <p>Events include a pseudonymous user-session identifier, a visit identifier, timestamp, app version, platform, language, the app design in use (new or classic), and the device model, operating system version and screen size. They never include the device name or hardware identifiers.</p>
-<p>Events are hosted by Supabase and retained for 90 days, with daily deletion of older records. Aggregated daily counts, with no identifier, are kept longer. The admin dashboard displays aggregate statistics. These events exclude GPS positions, route coordinates, names and email addresses. They also exclude search text, except for car searches that found no car: that text is first cleaned on your device (Latin letters, digits and basic punctuation, 40 characters at most) and is not sent if it contains an email address or more than five digits. Opting out stops new collection and clears pending events on your device; previously delivered events follow the retention period. This setting does not disable Sentry reliability diagnostics. Reinstalling the app can create a new identifier and restore default settings.</p>
+<p>Events are hosted by Supabase and retained for 90 days, with daily deletion of older records. Aggregated daily counts, with no identifier, are kept longer; they also include the cleaned text of car searches that found nothing. The admin dashboard displays aggregate statistics. These events exclude GPS positions, route coordinates, names and email addresses. They also exclude search text, except for car searches that found no car: that text is first cleaned on your device (Latin letters, digits and basic punctuation, 40 characters at most) and is not sent if it contains an email address or more than five digits. Opting out stops new collection and clears pending events on your device; previously delivered events follow the retention period. This setting does not disable Sentry reliability diagnostics. Reinstalling the app can create a new identifier and restore default settings.</p>
 <h2>What we do NOT collect</h2>
 <ul>
 <li>Names, email addresses, or phone numbers required to use the app. You may voluntarily provide an email address with a feedback message.</li>
@@ -122,19 +126,23 @@ text-align:center}
 <li>Device contacts, photos (except those you voluntarily submit), or other personal files</li>
 </ul>
 <h2>Third-party services</h2>
-<p>Charj relies on:
-- <strong>Google Maps</strong> for map tiles and navigation. Google's privacy policy applies: https://policies.google.com/privacy
-- <strong>Supabase</strong> for database hosting. Supabase's privacy policy: https://supabase.com/privacy
-- <strong>Expo</strong> (Expo Push), with <strong>Firebase Cloud Messaging</strong> (Google) on Android and <strong>Apple Push Notification service</strong> on iOS, to deliver charger alerts if you turn them on. Expo's privacy policy: https://expo.dev/privacy
-- <strong>Sentry</strong>, when enabled, for reliability diagnostics. Privacy policy: https://sentry.io/privacy/
-- <strong>Open Charge Map</strong> for base charger data. No user data is sent to Open Charge Map.</p>
+<p>Charj relies on:</p>
+<ul>
+<li><strong>Google Maps</strong> for map tiles and navigation. Google's privacy policy applies: https://policies.google.com/privacy</li>
+<li><strong>Supabase</strong> for database hosting. Supabase's privacy policy: https://supabase.com/privacy</li>
+<li><strong>Expo</strong> (Expo Push), with <strong>Firebase Cloud Messaging</strong> (Google) on Android and <strong>Apple Push Notification service</strong> on iOS, to deliver charger alerts if you turn them on. Expo's privacy policy: https://expo.dev/privacy</li>
+<li><strong>Sentry</strong>, when enabled, for reliability diagnostics. Privacy policy: https://sentry.io/privacy/</li>
+<li><strong>Open Charge Map</strong> for base charger data. No user data is sent to Open Charge Map.</li>
+</ul>
 <h2>Your rights</h2>
-<p>You may at any time:
-- Turn off usage analytics in Charj settings
-- Revoke location permissions via your device settings
-- Turn off charger alerts or remove your regions in Settings → Charger alerts, or block Charj notifications in your device settings
-- Delete all local app data by uninstalling Charj
-- Request deletion of a submission you made by opening a GitHub issue: https://github.com/alabenkhlifa/CharJ/issues</p>
+<p>You may at any time:</p>
+<ul>
+<li>Turn off usage analytics in Charj settings</li>
+<li>Revoke location permissions via your device settings</li>
+<li>Turn off charger alerts or remove your regions in Settings → Charger alerts, or block Charj notifications in your device settings</li>
+<li>Delete all local app data by uninstalling Charj</li>
+<li>Request deletion of a submission you made by opening a GitHub issue: https://github.com/alabenkhlifa/CharJ/issues</li>
+</ul>
 <h2>Children</h2>
 <p>Charj is suitable for all ages and does not knowingly collect data from children.</p>
 <h2>Changes to this policy</h2>
