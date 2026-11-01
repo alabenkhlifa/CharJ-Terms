@@ -58,7 +58,7 @@ text-align:center}
     </div>
     <article class="card">
       <h1>Politique de confidentialité de Charj</h1>
-<p><strong>Dernière mise à jour : 14 septembre 2026</strong></p>
+<p><strong>Dernière mise à jour : 1er novembre 2026</strong></p>
 <p>Charj est une application mobile gratuite, sans publicité, qui aide les propriétaires de véhicules électriques en Tunisie à trouver des bornes de recharge. Cette politique explique quelles données nous collectons et comment nous les utilisons.</p>
 <h2>Résumé</h2>
 <ul>
@@ -93,8 +93,22 @@ text-align:center}
 <h3>Données techniques</h3>
 <p>Charj peut mettre en cache localement des données de bornes sur votre appareil pour un usage hors-ligne. Ce cache est stocké uniquement sur votre appareil. Les versions où Sentry est activé envoient des diagnostics d’erreurs, de performances et de stabilité des sessions pour corriger les problèmes.</p>
 <h3>Statistiques d’utilisation</h3>
-<p>Les statistiques d’utilisation sont activées par défaut. Vous pouvez les désactiver dans Paramètres → Statistiques d’utilisation. Elles mesurent les ouvertures de l’application, les consultations de bornes, le nombre de résultats et le filtre d’une recherche, les demandes d’itinéraire et leur résultat, ainsi que les lancements d’une application de navigation. Elles comprennent un identifiant de session utilisateur pseudonyme, un identifiant de visite, la date, la version de l’application, la plateforme et la langue.</p>
-<p>Les événements sont hébergés chez Supabase et conservés pendant 90 jours avec une purge quotidienne. Le tableau de bord administrateur affiche des statistiques agrégées. Ces événements ne contiennent ni position GPS, ni coordonnées de trajet, ni texte de recherche, ni nom ou adresse e-mail. Désactiver les statistiques arrête la nouvelle collecte et efface les événements en attente sur l’appareil ; les événements déjà transmis suivent la durée de conservation. Cette option ne désactive pas les diagnostics de fiabilité de Sentry. Réinstaller l’application peut créer un nouvel identifiant et rétablir les paramètres par défaut.</p>
+<p>Les statistiques d’utilisation sont activées par défaut. Vous pouvez les désactiver dans Paramètres → Statistiques d’utilisation. Elles mesurent :</p>
+<ul>
+<li>Les ouvertures de l’application et les écrans consultés (le nom de l’écran uniquement)</li>
+<li>Le résultat de l’accueil : voiture ajoutée ou étape ignorée</li>
+<li>La réponse à une demande d’autorisation de localisation et l’endroit de l’application où elle a été faite, seulement quand la fenêtre du système s’est affichée</li>
+<li>Les consultations de bornes, le nombre de résultats et le filtre d’une recherche, les changements de filtre sur la carte et de tri de la liste, ainsi que les bornes ajoutées aux favoris ou retirées</li>
+<li>Les demandes d’itinéraire et leur résultat, avec le gouvernorat (jamais la position) du départ et de l’arrivée, ainsi que les itinéraires enregistrés et partagés</li>
+<li>Les lancements d’une application de navigation</li>
+<li>Les voitures ajoutées (et depuis quel endroit de l’application) et, pour une recherche de voiture, le nombre de résultats et la longueur du texte saisi</li>
+<li>Le texte d’une recherche de voiture, uniquement quand aucune voiture ne correspond (voir ci-dessous)</li>
+<li>Les avis commencés (avec la borne concernée), ainsi que les propositions de borne commencées et envoyées</li>
+<li>Les changements de langue et de thème</li>
+<li>Pour les alertes bornes : la réponse à la demande d’autorisation des notifications, le nombre de régions choisies, la réponse à la carte d’invitation et l’ouverture d’une notification</li>
+</ul>
+<p>Elles comprennent un identifiant de session utilisateur pseudonyme, un identifiant de visite, la date, la version de l’application, la plateforme, la langue et le design utilisé (nouveau ou classique).</p>
+<p>Les événements sont hébergés chez Supabase et conservés pendant 90 jours avec une purge quotidienne. Des totaux quotidiens agrégés, sans aucun identifiant, sont conservés plus longtemps. Le tableau de bord administrateur affiche des statistiques agrégées. Ces événements ne contiennent ni position GPS, ni coordonnées de trajet, ni nom ou adresse e-mail. Ils ne contiennent pas non plus le texte des recherches, sauf pour une recherche de voiture sans résultat : ce texte est d’abord nettoyé sur votre appareil (lettres latines, chiffres et ponctuation simple, 40 caractères au maximum) et n’est pas envoyé s’il contient une adresse e-mail ou plus de cinq chiffres. Désactiver les statistiques arrête la nouvelle collecte et efface les événements en attente sur l’appareil ; les événements déjà transmis suivent la durée de conservation. Cette option ne désactive pas les diagnostics de fiabilité de Sentry. Réinstaller l’application peut créer un nouvel identifiant et rétablir les paramètres par défaut.</p>
 <h2>Ce que nous ne collectons PAS</h2>
 <ul>
 <li>Noms, adresses e-mail ou numéros de téléphone requis pour utiliser l’application. Vous pouvez fournir volontairement une adresse e-mail avec un message de retour.</li>
